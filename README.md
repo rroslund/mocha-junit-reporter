@@ -1,4 +1,4 @@
-#JUnit Reporter for Mocha
+# JUnit Reporter for Mocha
 [![Build Status](https://travis-ci.org/michaelleeallen/mocha-junit-reporter.svg?branch=master)](https://travis-ci.org/michaelleeallen/mocha-junit-reporter)
 [![npm](https://img.shields.io/npm/v/mocha-junit-reporter.svg?maxAge=2592000)](https://www.npmjs.com/package/mocha-junit-reporter)
 
@@ -89,3 +89,18 @@ var mocha = new Mocha({
     }
 });
 ```
+
+You can also configure the `testsuites.name` attribute by setting `reporterOptions.fileSuiteTitle` and the root suite's `name` attribute by setting `reporterOptions.rootSuiteTitle`.
+
+### Full configuration options
+
+| Parameter | Effect |
+| --------- | ------ |
+| mochaFile | configures the file to write reports to |
+| includePending | if set to a truthy value pending tests will be included in the report |
+| properties | a hash of additional properties to add to each test suite |
+| toConsole | if set to a truthy value the produced XML will be logged to the console |
+| useFullSuiteTitle | if set to a truthy value nested suites' titles will show the suite lineage |
+| suiteTitleSeparedBy | the character to use to separate nested suite titles. (defaults to ' ') |
+| rootSuiteName | the name for the root suite. (defaults to 'Root Suite') |
+| testsuitesName | the name for the `testsuites` tag (defaults to 'Mocha Tests') |

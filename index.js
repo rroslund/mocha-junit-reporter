@@ -21,14 +21,15 @@ function configureDefaults(options) {
   options.properties = options.properties || parsePropertiesFromEnv(process.env.PROPERTIES) || null;
   options.toConsole = !!options.toConsole;
   options.suiteTitleSeparedBy = options.suiteTitleSeparedBy || ' ';
-  options.rootSuiteTitle = 'Root Suite';
+  options.rootSuiteName = options.rootSuiteName || 'Root Suite';
+  options.testsuitesName = options.testsuitesName || 'Mocha Tests';
 
   return options;
 }
 
 function defaultSuiteTitle(suite) {
   if (suite.root && suite.title === '') {
-      return this._options.rootSuiteTitle;
+      return this._options.rootSuiteName;
   }
   return suite.title;
 }
@@ -39,7 +40,7 @@ function fullSuiteTitle(suite) {
 
   while (parent) {
     if (parent.root && parent.title === '') {
-      title.unshift(this._options.rootSuiteTitle);
+      title.unshift(this._options.rootSuiteName);
     } else {
       title.unshift(parent.title);
     }
@@ -274,7 +275,7 @@ MochaJUnitReporter.prototype.getXml = function(testsuites) {
 
   var rootSuite = {
     _attr: {
-      name: 'Mocha Tests',
+      name: this._options.testsuitesName,
       time: totalSuitesTime,
       tests: totalTests,
       failures: stats.failures
