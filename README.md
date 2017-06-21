@@ -102,5 +102,5 @@ You can also configure the `testsuites.name` attribute by setting `reporterOptio
 | toConsole | if set to a truthy value the produced XML will be logged to the console |
 | useFullSuiteTitle | if set to a truthy value nested suites' titles will show the suite lineage |
 | suiteTitleSeparatedBy | the character to use to separate nested suite titles. (defaults to ' ') |
-| rootSuiteName | the name for the root suite. (defaults to 'Root Suite') |
-| testsuitesName | the name for the `testsuites` tag (defaults to 'Mocha Tests') |
+| rootSuiteTitle | the name for the root suite. (defaults to 'Root Suite') |
+| testsuitesTitle | the name for the `testsuites` tag (defaults to 'Mocha Tests') |
