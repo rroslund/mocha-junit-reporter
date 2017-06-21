@@ -85,7 +85,7 @@ var mocha = new Mocha({
     reporter: 'mocha-junit-reporter',
     reporterOptions: {
         useFullSuiteTitle: true,
-        suiteTitleSeparedBy: '.' // suites separator, default is space (' ')
+        suiteTitleSeparatedBy: '.' // suites separator, default is space (' ')
     }
 });
 ```
@@ -101,6 +101,6 @@ You can also configure the `testsuites.name` attribute by setting `reporterOptio
 | properties | a hash of additional properties to add to each test suite |
 | toConsole | if set to a truthy value the produced XML will be logged to the console |
 | useFullSuiteTitle | if set to a truthy value nested suites' titles will show the suite lineage |
-| suiteTitleSeparedBy | the character to use to separate nested suite titles. (defaults to ' ') |
+| suiteTitleSeparatedBy | the character to use to separate nested suite titles. (defaults to ' ') |
 | rootSuiteName | the name for the root suite. (defaults to 'Root Suite') |
 | testsuitesName | the name for the `testsuites` tag (defaults to 'Mocha Tests') |
